@@ -23,6 +23,9 @@ public class MyHeap{
       }
     }
   }
+  private static void pushUp(int[]data,int index){
+    
+  }
   public static void heapify(int[] nums){
     int size = nums.length;
     pushDown(nums, size, 0);
