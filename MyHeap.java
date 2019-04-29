@@ -2,6 +2,7 @@ public class MyHeap{
   private static void pushDown(int[]data,int size,int index){
     if((index * 2 + 1 < size && data[index] < data[index * 2 + 1]) || (index * 2 + 2 < size && data[index] < data[index * 2 + 2])){
       int greater = 0;//finding the greater index to swap with
+      //if(index * 2 + 2 == size - 1)
       if(data[index * 2 + 2] > data[index * 2 + 1]){
         greater = index * 2 + 2;
         int temp = data[index * 2 + 2];//switching the values
@@ -24,7 +25,12 @@ public class MyHeap{
     }
   }
   private static void pushUp(int[]data,int index){
-    
+    if(((index - 1) / 2 >= 0 && data[index] > data[(index - 1) / 2]) || ((index - 2) / 2 >= 0 && data[index] > data[(index -2)/2])){
+      int greater = 0;
+      if(data[(index - 2) / 2] > data[(index - 1)/2]){
+
+      }
+    }
   }
   public static void heapify(int[] nums){
     int size = nums.length;
