@@ -55,14 +55,19 @@ public class MyHeap{
     //pushUp(nums, nums.length - 1);
   }
   public static void heapsort(int[] nums){
-    int[] newNums = new int[nums.length];
+    /*int[] newNums = new int[nums.length];
     for(int i = 0; i < nums.length; i++){
       newNums[i] = nums[i];
     }
     heapify(newNums);
     for(int i = 0; i < nums.length;i++){
       nums[i] = newNums[i];
-    }
+    }*/
+    int first = nums[0];
+    nums[0] = nums[nums.length - 1];
+    nums[nums.length - 1] = first;
+    pushDown(nums, nums.length, 0);
+    pushDown(nums, nums.length,0);
   }
   public static void main(String[]args){
     int[] nums = {13,2,34,12,5,6,29,70,88};
